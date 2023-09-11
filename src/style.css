@@ -15,8 +15,15 @@ body {
   padding: 20px;
 }
 
-.logo img {
-  width: 100px;
+.logo a img {
+  background: url("./assets/favicon.png");
+  background-color: white;
+  position: fixed;
+  height: 60px;
+  cursor: pointer;
+  padding-bottom: 0%;
+  margin-top: -2.9%;
+  background-size: cover;
 }
 
 .nav-links {
@@ -24,12 +31,18 @@ body {
   display: flex;
   gap: 20px;
   background: transparent;
+  margin-right: 4%;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: black;
-  font-weight: bold;
+  background-color: white;
+  font-size: 25px;
+  font-weight: 600;
+  border: 2px black;
 }
 
-
+.nav-links li a:hover {
+    text-shadow: 2px 2px 2px #c30808;
+}
