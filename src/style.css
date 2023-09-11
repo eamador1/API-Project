@@ -7,3 +7,29 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background: transparent;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+
