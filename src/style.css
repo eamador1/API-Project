@@ -1,3 +1,55 @@
 body {
   background-color: rgb(218, 219, 223);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mochiy+Pop+One&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*,
+body {
+  background-color: rgb(65, 65, 65);
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo a img {
+  background: url("./assets/favicon.png");
+  background-color: white;
+  position: absolute;
+  height: 5%;
+  cursor: pointer;
+  padding:1.5%;
+  margin-top: -3.2%;
+  background-size: cover;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background: transparent;
+  margin-right: 4%;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  font-size: 25px;
+  font-weight: 600;
+  border: 2px black;
+}
+
+.nav-links li a:hover {
+  text-shadow: 2px 2px 2px #c30808;
+}
+
+
