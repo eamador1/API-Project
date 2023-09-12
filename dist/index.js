@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\n\n//# sourceURL=webpack://webpack-template/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst container = document.querySelector('.image-container');\n\nconst tvMazeApi = async () => {\n  const req = await fetch(`https://api.tvmaze.com/shows`);\n  const res = await req.json();\n  console.log(res);\n}\n\n\n\n/*fetch(`https://api.tvmaze.com/shows`, options)\n.then(res => res.json())\n.then(response => {\n    console.log(response)\n})*/\n\n//# sourceURL=webpack://webpack-template/./src/index.js?");
 
 /***/ })
 

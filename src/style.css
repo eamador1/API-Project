@@ -1,3 +1,17 @@
 body {
   background-color: bisque;
 }
+
+.series-container {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: auto;
+  row-gap: 10vh;
+  margin-left: 15%;
+}
+
+.series-image {
+  width: 20vw;
+  height: 50vh;
+  border-radius: 10px;
+}

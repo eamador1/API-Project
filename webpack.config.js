@@ -4,6 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     index: './src/index.js',
+    // Runtime code for hot module replacement
+    hot: 'webpack/hot/dev-server.js',
+    // Dev server client for web socket transport, hot and live reload logic
+    client: 'webpack-dev-server/client/index.js?hot=true&live-reload=true',
   },
   devServer: {
     static: './dist',
@@ -14,6 +18,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      title: 'Hot Module Replacement',
     }),
   ],
   output: {
