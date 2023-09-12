@@ -9,6 +9,6 @@ axios.get('https://api.tvmaze.com/shows')
 
     populateSeries(series);
   })
-  .catch(error => {
+  .catch((error) => {
     console.error(error);
   });
