@@ -3,30 +3,31 @@ const populateSeries = (series) => {
     seriesContainer.innerHTML = '';
   
     series.forEach((seriesData) => {
+      const contGeneral = document.createElement('div');
       const image = document.createElement('img');
       const contTitle = document.createElement('div');
       const title = document.createElement('h5');
-      /*const contButtons = document.createElement('div');
+      const contButtons = document.createElement('div');
       const comments = document.createElement('button');
-      const reservations = document.createElement('button');*/
+      const reservations = document.createElement('button');
       
       image.classList.add('series-image');
-      //contTitle = classList.add('contTitle');
-      /*contButtons.classList.add('contButtons');*/
-      /*comments.classList.add('comments');*/
-      /*comments.textContent = 'Comments';*/
-      /*reservations.classList.add('reservations');*/
-      /*reservations.textContent = 'Reservations';*/
+      contTitle.classList.add('contTitle');
+      contButtons.classList.add('contButtons');
+      comments.classList.add('comments');
+      comments.textContent = 'Comments';
+      reservations.classList.add('reservations');
+      reservations.textContent = 'Reservations';
       image.src = seriesData.image.original;
-      //title.textContent = seriesData.name;
+      title.textContent = seriesData.name;
 
-      //contTitle.appendChild(title);
-      //contButtons.appendChild(comments);
-      //contButtons.appendChild(reservations);
-      seriesContainer.appendChild(image);
-      //seriesContainer.appendChild(contTitle);
-      //seriesContainer.appendChild(contButtons);
-      
+      contTitle.appendChild(title);
+      contButtons.appendChild(comments);
+      contButtons.appendChild(reservations);
+      contGeneral.appendChild(image);
+      contGeneral.appendChild(contTitle);
+      contGeneral.appendChild(contButtons);
+      seriesContainer.appendChild(contGeneral);
     });
   };
   
