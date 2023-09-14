@@ -90,3 +90,84 @@ body {
   padding: 2.5%;
   font-weight: bolder;
 }
+
+/*Modal pop up comment*/
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 50%;
+  padding: 1%;
+  transition: 0.7ms ease-in-out;
+}
+
+.popupimg {
+  width: 10vw;
+  height: 30vh;
+  border-radius: 10px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.popupdescrip {
+  background: transparent;
+}
+
+.closepopup {
+  background: url('../src/assets/cross.png');
+  width: 5%;
+  position: absolute;
+  right: 3%;
+  cursor: pointer;
+}
+
+.titlepopup {
+  background-color: transparent;
+}
+
+.titleComment {
+  background-color: transparent;
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.firstPerson {
+  background-color: transparent;
+}
+
+.secondPerson {
+  background-color: transparent;
+}
+
+.inputName {
+  background-color: transparent;
+  width: 97%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.textarea {
+  background-color: transparent;
+  width: 89%;
+  padding: 5%;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
