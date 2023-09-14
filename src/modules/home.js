@@ -41,8 +41,7 @@ const populateSeries = (series) => {
     popupimg.src = seriesData.image.original;
 
     const description = document.createElement('p');
-    description.textContent = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, atque repellat nesciunt optio dolorem corrupti dolores placeat dolorum id iusto nam tempore aspernatur et modi qui voluptate libero reiciendis quasi?
-    Enim officia aut quae! Fugiat error a architecto reprehenderit rem amet, culpa ea, deserunt id inventore numquam neque. Quas laborum at sit! Atque voluptatum culpa vitae tempore animi? Non.`;
+    description.innerHTML = seriesData.summary;
 
     const closepopup = document.createElement('img');
 
@@ -62,6 +61,7 @@ const populateSeries = (series) => {
     const textarea = document.createElement('textarea');
     textarea.textContent = 'Your Insights';
 
+    // Add Class
     modalcomment.classList.add('modal');
     titlepopup.classList.add('titlepopup');
     popupimg.classList.add('popupimg');
@@ -74,6 +74,7 @@ const populateSeries = (series) => {
     textarea.classList.add('textarea');
     overlay.classList.add('overlay');
 
+    // Click event
     comments.addEventListener('click', () => {
       closepopup.src = 'assets/cross.png';
       closepopup.style.cursor = 'pointer';
