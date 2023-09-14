@@ -1,11 +1,9 @@
 import postLikes from './addLikes.js';
 import { updateLikes } from './fetchLikes.js';
 
-
 const seriesContainer = document.querySelector('.series-container');
 
 const populateSeries = (series) => {
-  
   seriesContainer.innerHTML = '';
 
   series.forEach((seriesData) => {
@@ -30,13 +28,11 @@ const populateSeries = (series) => {
     reservations.textContent = 'Reservations';
     image.src = seriesData.image.original;
     title.textContent = seriesData.name;
-    likeButton.innerHTML='&#9825;';
+    likeButton.innerHTML = '&#9825;';
     likeButton.setAttribute('data-series-data', JSON.stringify(seriesData));
-
 
     displayLikes.id = `likes-${seriesData.id}`;
     updateLikes(seriesData.id, displayLikes);
-    
 
     contTitle.appendChild(title);
     contButtons.appendChild(comments);
@@ -47,22 +43,12 @@ const populateSeries = (series) => {
     contGeneral.appendChild(displayLikes);
     contGeneral.appendChild(contButtons);
     seriesContainer.appendChild(contGeneral);
-
-    
-
-
   });
-
-  
-
-  
 };
 
 export default populateSeries;
 
-
-
-seriesContainer.addEventListener('click', async (event) => {
+/* seriesContainer.addEventListener('click', async (event) => {
     if (event.target.classList.contains('likeButton')) {
         const seriesData = event.target.dataset.seriesData;
         await postLikes(seriesData.id);
@@ -70,4 +56,14 @@ seriesContainer.addEventListener('click', async (event) => {
       await updateLikes(seriesData.id, showLikes);
       console.log(updateLikes);
     }
-  })
+  }) */
+
+seriesContainer.addEventListener('click', async (event) => {
+  if (event.target.classList.contains('likeButton')) {
+    const seriesDataString = event.target.getAttribute('data-series-data');
+    const seriesData = JSON.parse(seriesDataString);
+    const showLikes = event.target.nextElementSibling;
+    await postLikes(seriesData.id);
+    await updateLikes(seriesData.id, showLikes);
+  }
+});
