@@ -1,6 +1,8 @@
 import postLikes from './addLikes.js';
 import { updateLikes } from './fetchLikes.js';
 
+const axios = require('axios');
+
 const seriesContainer = document.querySelector('.series-container');
 
 const populateSeries = (series) => {
