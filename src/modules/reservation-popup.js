@@ -1,20 +1,17 @@
 import getCount from '../reservation-counter.js';
 
-const getReservation = async (url) => {
+export const getReservation = async (url) => {
   const response = await fetch(url);
   let data = [];
-const getReservation = async (url) => {
+export const getReservation = async (url) => {
   if (response.ok) {
     data = await response.json();
   }
   return data;
 };
 let addReservation;
-  
-  export { reservpopup, getReservation };
-  
 const container = document.getElementById('popup');
-const reservpopup = async (showid = 98) => {
+export const reservpopup = async (showid = 98) => {
   const involvementUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FjhFMUdws0lCxR3eXCdS/reservations?item_id=${showid}`;
   // Fetch data from API
   const reservations = await getReservation(involvementUrl);
