@@ -98,7 +98,4 @@ addReservation = async (url, showid, user, startDate, endDate) => {
   reservpopup(showid);
 };
 
-export {
-  reservpopup,
-  getReservation,
-};
+export default {reservpopup, getReservation,};
