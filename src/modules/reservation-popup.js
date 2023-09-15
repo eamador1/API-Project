@@ -1,9 +1,8 @@
 import getCount from '../reservation-counter.js';
 
-export const getReservation = async (url) => {
+const getReservation = async (url) => {
   const response = await fetch(url);
   let data = [];
-export const getReservation = async (url) => {
   if (response.ok) {
     data = await response.json();
   }
@@ -11,7 +10,7 @@ export const getReservation = async (url) => {
 };
 let addReservation;
 const container = document.getElementById('popup');
-export const reservpopup = async (showid = 98) => {
+const reservpopup = async (showid = 98) => {
   const involvementUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FjhFMUdws0lCxR3eXCdS/reservations?item_id=${showid}`;
   // Fetch data from API
   const reservations = await getReservation(involvementUrl);
@@ -64,11 +63,11 @@ export const reservpopup = async (showid = 98) => {
       container.style.display = 'block';
     });
   const closeBtn = document.getElementById('closeBtn');
- addReservation = async (url, showid, user, startDate, endDate) => {
   closeBtn.addEventListener('click', (e) => {
     e.preventDefault();
     container.style.display = 'none';
   });
+
   const reserveBtn = document.getElementById('reserve-button');
   reserveBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -81,6 +80,7 @@ export const reservpopup = async (showid = 98) => {
     }
   });
 };
+
 addReservation = async (url, showid, user, startDate, endDate) => {
   await fetch(url, {
     method: 'POST',
@@ -95,4 +95,9 @@ addReservation = async (url, showid, user, startDate, endDate) => {
     }),
   });
   reservpopup(showid);
+};
+
+export {
+  reservpopup,
+  getReservation,
 };
