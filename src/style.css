@@ -52,14 +52,13 @@ body {
   grid-template-columns: 30% 30% 30%;
   grid-template-rows: auto;
   row-gap: 10vh;
-  padding-left: 15%;
-  padding-top: 5%;
+  padding: 5% 0 3% 15%;
   background-color: lightgray;
 }
 
 .series-image {
   width: 20vw;
-  height: 30vh;
+  height: 45vh;
   border-radius: 10px;
 }
 
@@ -187,6 +186,11 @@ body {
   margin-left: 15%;
 }
 
+.site-footer {
+  padding: 2vh 0 2vh 2vw;
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   *,
   body {
@@ -200,11 +204,22 @@ body {
     grid-template-columns: 1fr;
     justify-items: center;
     align-items: center;
+    padding: 5% 0 3% 15%;
     gap: 20px;
+  }
+
+  .contTitle {
+    width: 100%;
+  }
+
+  .series-image {
+    width: 20vw;
+    height: 30vh;
   }
 
   .popupimg {
     width: 30vw;
     height: 60vh;
   }
+
 }
