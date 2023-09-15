@@ -9,8 +9,8 @@ const getReservation = async (url) => {
   }
   return data;
 };
-  export default {reservpopup, getReservation,};
 let addReservation;
+  export { reservpopup, getReservation };
 const container = document.getElementById('popup');
 const reservpopup = async (showid = 98) => {
 const reservpopup = async (showid = 98) => {
