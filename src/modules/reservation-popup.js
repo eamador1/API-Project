@@ -13,10 +13,9 @@ const reservpopup = async (showid = 98) => {
   const involvementUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FjhFMUdws0lCxR3eXCdS/reservations?item_id=${showid}`;
   // Fetch data from API
   const reservations = await getReservation(involvementUrl);
-   await fetch(`https://api.tvmaze.com/shows/${showid}`)
+  await fetch(`https://api.tvmaze.com/shows/${showid}`)
     .then((response) => response.json())
     .then((data) => {
-const reservpopup = async (showid = 98) => {
       container.innerHTML = `
         <div class="reservation-container">
         <span id="closeBtn" class="close-button">&times;</span>
@@ -51,11 +50,10 @@ const reservpopup = async (showid = 98) => {
               <div class="existing-reservations">
                   <h3>Reservations ()</h3>
                   <ul class="comment-box">
-                  ${reservations.map((reservation) => `<li><span class="tag">${`${reservation.date_start} to ${reservation.date_end} by ${reservation.username} `}</span></li>`).join('')}
-                    </ul>
+                 ${reservations.map((reservation) => `<li><span class="tag">${`${reservation.date_start} to ${reservation.date_end} by ${reservation.username} `}</span></li>`).join('')}
+                 </ul>
               </div>
           </div>
-const reservpopup = async (showid = 98) => {
           </div>`;
       container.style.display = 'block';
     });
@@ -64,7 +62,8 @@ const reservpopup = async (showid = 98) => {
     e.preventDefault();
     container.style.display = 'none';
   });
-      const reserveBtn = document.getElementById('reserve-button');
+
+  const reserveBtn = document.getElementById('reserve-button');
   reserveBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const user = document.getElementById('name');
@@ -76,6 +75,7 @@ const reservpopup = async (showid = 98) => {
     }
   });
 };
+
 addReservation = async (url, showid, user, startDate, endDate) => {
   await fetch(url, {
     method: 'POST',
@@ -90,6 +90,6 @@ addReservation = async (url, showid, user, startDate, endDate) => {
     }),
   });
   reservpopup(showid);
-      };
+};
 
 export default reservpopup;
