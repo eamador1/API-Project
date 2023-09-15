@@ -15,17 +15,6 @@ body {
   padding: 20px;
 }
 
-.logo a img {
-  background: url("./assets/favicon.png");
-  background-color: white;
-  position: absolute;
-  height: 5%;
-  cursor: pointer;
-  padding: 1.5%;
-  margin-top: -3.2%;
-  background-size: cover;
-}
-
 .nav-links {
   list-style: none;
   display: flex;
@@ -86,13 +75,6 @@ body {
   cursor: pointer;
   border-radius: 10px;
   font-weight: 500;
-}
-
-.reservations:hover,
-.comments:hover {
-  width: 32%;
-  padding: 2.5%;
-  font-weight: bolder;
 }
 
 /* Modal pop up comment */
@@ -228,6 +210,17 @@ body {
   height: 100%;
 }
 
+.logo a img {
+  background: url("./assets/favicon.png");
+  background-color: white;
+  position: absolute;
+  height: 5%;
+  cursor: pointer;
+  padding: 1.5%;
+  margin-top: -3.2%;
+  background-size: cover;
+}
+
 .details-container {
   width: 100%;
 }
@@ -259,6 +252,13 @@ body {
 .reservations {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.reservations:hover,
+.comments:hover {
+  width: 32%;
+  padding: 2.5%;
+  font-weight: bolder;
 }
 
 .info-wrapper {
