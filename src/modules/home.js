@@ -1,3 +1,4 @@
+import reservpopup from './reservation-popup.js';
 import postLikes from './addLikes.js';
 import { updateLikes } from './fetchLikes.js';
 
@@ -13,7 +14,7 @@ const populateSeries = (series) => {
     const title = document.createElement('h5');
     const contButtons = document.createElement('div');
     const comments = document.createElement('button');
-    const reservations = document.createElement('button');
+    const reserve = document.createElement('button');
     const likeButton = document.createElement('button');
     const displayLikes = document.createElement('span');
 
@@ -24,8 +25,8 @@ const populateSeries = (series) => {
     likeButton.classList.add('likeButton');
     displayLikes.classList.add('displayLikes');
     comments.textContent = 'Comments';
-    reservations.classList.add('reservations');
-    reservations.textContent = 'Reservations';
+    reserve.id = 'reserve';
+    reserve.textContent = 'Reservations';
     image.src = seriesData.image.original;
     title.textContent = seriesData.name;
     likeButton.innerHTML = '&#9825;';
@@ -36,14 +37,21 @@ const populateSeries = (series) => {
 
     contTitle.appendChild(title);
     contButtons.appendChild(comments);
-    contButtons.appendChild(reservations);
+    contButtons.appendChild(reserve);
     contGeneral.appendChild(image);
     contGeneral.appendChild(contTitle);
     contGeneral.appendChild(likeButton);
     contGeneral.appendChild(displayLikes);
     contGeneral.appendChild(contButtons);
     seriesContainer.appendChild(contGeneral);
-
+  const reserveBtn = document.querySelectorAll('#reserve');
+  reserveBtn.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const showid = button.parentElement.parentElement.getAttribute('id');
+      reservpopup(showid);
+    });
+  });
     // Comment pop up Modal
     const overlay = document.createElement('div');
     const modalcomment = document.createElement('div');
