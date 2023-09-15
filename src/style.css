@@ -194,12 +194,12 @@ body {
 .reservation-container {
   width: 50%;
   margin: auto;
-  background-color: #f8f8f8;
+  background-color: #171717;
   padding: 12px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  color: #111;
+  color: #fff;
 }
 
 .poster-container {
@@ -252,6 +252,7 @@ body {
 .reservations {
   display: grid;
   grid-template-columns: auto auto;
+  gap: 0.8rem;
 }
 
 .reservations:hover,
@@ -290,6 +291,10 @@ body {
   height: 1.8rem;
   margin-bottom: 0.5rem;
   width: 14rem;
+}
+
+.close-button {
+  max-width: 1rem;
 }
 
 @media (max-width: 768px) {
