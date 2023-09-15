@@ -10,9 +10,10 @@ const getReservation = async (url) => {
   return data;
 };
 let addReservation;
+  
   export { reservpopup, getReservation };
+  
 const container = document.getElementById('popup');
-const reservpopup = async (showid = 98) => {
 const reservpopup = async (showid = 98) => {
   const involvementUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FjhFMUdws0lCxR3eXCdS/reservations?item_id=${showid}`;
   // Fetch data from API
