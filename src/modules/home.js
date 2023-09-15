@@ -1,4 +1,4 @@
-import reservpopup from './reservation-popup.js';
+import { reservpopup } from './reservation-popup.js';
 import postLikes from './addLikes.js';
 import { updateLikes } from './fetchLikes.js';
 
