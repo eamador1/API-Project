@@ -136,3 +136,57 @@ seriesContainer.addEventListener('click', async (event) => {
     await updateLikes(seriesData.id, showLikes);
   }
 });
+// Elements
+const openPopupButton = document.getElementById('open-popup');
+const popup = document.getElementById('popup');
+const closePopupButton = document.getElementById('close-popup');
+const reservationNameInput = document.getElementById('reservation-name');
+const startDateInput = document.getElementById('start-date');
+const endDateInput = document.getElementById('end-date');
+const reserveButton = document.getElementById('reserve-button');
+
+// Function to open the popup
+openPopupButton.addEventListener('click', () => {
+  popup.style.display = 'block';
+});
+
+// Function to close the popup
+closePopupButton.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+// Function to handle the "Reserve" button click
+reserveButton.addEventListener('click', async () => {
+  const name = reservationNameInput.value;
+  const startDate = startDateInput.value;
+  const endDate = endDateInput.value;
+
+  // Example reservation data
+  const reservationData = {
+    item_id: 'item1', 
+    username: name, 
+    date_start: startDate, 
+    date_end: endDate, 
+  };
+  try {
+    // Make a POST request to record the reservation data in the Involvement API
+    const response = await axios.post(
+      'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ESFmcHLibSbkeopgzEeb/',
+      reservationData, 
+    );
+
+    if (response.status === 201) {
+      // Reservation created successfully
+      console.log('Reservation created successfully');
+    } else {
+      // Handle other response statuses here
+      console.error('Failed to create reservation');
+    }
+
+    // Close the popup after making the reservation
+    popup.style.display = 'none';
+  } catch (error) {
+    console.error('An error occurred:', error);
+  }
+});
+
