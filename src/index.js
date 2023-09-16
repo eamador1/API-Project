@@ -1,18 +1,21 @@
 import './style.css';
 import render from './modules/fetch-movies.js';
-import logo from './assets/favicon.png';
+import logo from './assets/logo-white.png';
 import renderpopup from './modules/comment.js';
 import { countLikes } from './modules/likes.js';
-import getCommentsCount from './modules/comments-counter.js';
+import itemsCounter from './modules/items-counter.js';
+import getCommentsCount from './modules/comments-counter';
 
 document.getElementById('logo-img').setAttribute('src', logo);
 await render();
 
 const heartIcons = document.querySelectorAll('.fa-heart');
+const spanItems = document.getElementById('items-count');
+// Add the number of items in the span.
+spanItems.textContent = ` (${itemsCounter()})`;
 
 heartIcons.forEach((icon) => icon.addEventListener('click', (event) => {
   countLikes(event);
-  event.target.classList.add('animation-heart');
   // Selects the span element next to the icon.
   const span = event.target.nextElementSibling;
   // Retrieves the number of likes and increment it by 1.
@@ -34,3 +37,5 @@ commentBtns.forEach((btn) => {
     commentsCountCon.textContent = `(${getCommentsCount()})`;
   });
 });
+
+// Comment popup end >
