@@ -1,6 +1,5 @@
 import sendData from './send.js';
 import getCommentsCount from './comments-counter.js';
-
 // Take the API endpoint and retrives data. return retrived data
 const getData = async (url) => {
   const response = await fetch(url);
@@ -10,7 +9,6 @@ const getData = async (url) => {
   }
   return data;
 };
-
 // renderpopup get the data from getData function and inject the popup templete with that data
 const renderpopup = async (showid = 98) => {
   const container = document.getElementById('comment-popup-container');
@@ -40,8 +38,8 @@ const renderpopup = async (showid = 98) => {
                  <li class="summary normal">Summary: ${data.summary}</li>
                </ul>
              </div>
-           </div> 
-           </div> 
+           </div>
+           </div>
            <div class="comments">
              <div class="forms">
                <h3 class="heading"> Add a Comment </h3>
@@ -60,17 +58,13 @@ const renderpopup = async (showid = 98) => {
          </div>
          </div>
          `;
-
   // Add click event to the comment popup close icon
   const closeBtn = container.querySelector('.close');
   closeBtn.addEventListener('click', () => {
     container.innerHTML = '';
   });
-
   const addCommentBtn = document.querySelector('.add-comment-btn');
-
   // Add event for add comment button
-
   addCommentBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     const nameElem = document.querySelector('.username');
@@ -81,12 +75,21 @@ const renderpopup = async (showid = 98) => {
       await renderpopup(data.id);
       nameElem.value = '';
       commentElem.value = '';
-
       const commentsCountCon = document.querySelector('.commentsCount');
-
       commentsCountCon.textContent = `(${getCommentsCount()})`;
     }
   });
 };
-
 export default renderpopup;
+
+
+
+
+
+
+
+
+
+
+
+

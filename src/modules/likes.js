@@ -1,6 +1,6 @@
 const countLikes = async (event) => {
   try {
-    return await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/FjhFMUdws0lCxR3eXCdS/likes', {
+    return await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ESFmcHLibSbkeopgzEeb/likes', {
       method: 'POST',
       body: JSON.stringify({
         item_id: `${event.target.parentNode.parentNode.parentNode.id}`,
