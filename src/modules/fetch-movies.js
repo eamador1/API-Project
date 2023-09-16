@@ -1,9 +1,11 @@
+import { retrieveLikes } from './likes.js';
+
 const url = 'https://api.tvmaze.com/shows';
 // Fetches data from API
 const getData = async () => {
   try {
-    const response = await fetch(url); // Fetch data from api endpoints
-    const data = await response.json(); // Change the data format to json
+    const response = await fetch(url);
+    const data = await response.json();
     return data;
   } catch (error) {
     return error.message;
@@ -17,6 +19,7 @@ const render = async () => {
     .slice(0, 12);
 
   const tvShowsDiv = document.getElementById('tvShows');
+  const likes = await retrieveLikes();
   topTen.forEach((show) => {
     const poster = show.image ? show.image.medium : '';
     const title = show.name;
@@ -33,10 +36,16 @@ const render = async () => {
     const serieLike = likes.find((obj) => obj.item_id === `${id}`);
     const count = !serieLike ? 0 : serieLike.likes;
     titleContainer.innerHTML = `
+    <h2>${title}</h2>
+    <div class="likes-container">
+    <i class="fa-solid fa-heart"></i>
+    <span>${count} likes</span>
+  </div>
+`;
     icons.classList.add('span-icons');
     icons.innerHTML = `
       &nbsp; 
-      <button><i class="fa-regular fa-comment"></i> Comment</button>
+      <button class="comment-btn"><i class="fa-regular fa-comment"></i> Comment</button>
       &nbsp; 
       <button id="reserve"><i class="fa-regular fa-clock"></i> Reserve</button>`;
 
@@ -44,14 +53,6 @@ const render = async () => {
     showDiv.appendChild(titleContainer);
     showDiv.appendChild(icons);
     tvShowsDiv.appendChild(showDiv);
-  });
-  const reserveBtn = document.querySelectorAll('#reserve');
-  reserveBtn.forEach((button) => {
-    button.addEventListener('click', (e) => {
-      e.preventDefault();
-      const showid = button.parentElement.parentElement.getAttribute('id');
-      reservpopup(showid);
-    });
   });
 };
 

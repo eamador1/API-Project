@@ -2,7 +2,7 @@ import './style.css';
 import render from './modules/fetch-movies.js';
 import logo from './assets/favicon.png';
 import renderpopup from './modules/comment.js';
-import { countLikes } from './modules/likes.js';
+//import { countLikes } from './modules/likes.js';
 import getCommentsCount from './modules/comments-counter.js';
 
 document.getElementById('logo-img').setAttribute('src', logo);
@@ -15,9 +15,6 @@ heartIcons.forEach((icon) => icon.addEventListener('click', (event) => {
   event.target.classList.add('animation-heart');
   // Selects the span element next to the icon.
   const span = event.target.nextElementSibling;
-  // Retrieves the number of likes and increment it by 1.
-  let count = Number(span.textContent.replace('likes', ''));
-  span.textContent = `${count += 1} likes`;
 }));
 
 // < Comment popup start
