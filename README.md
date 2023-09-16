@@ -61,21 +61,20 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- Video presentation -->
+
 ## Video Presentation <a name="video-presentation"></a>
-[Click here]()
+[Click here](https://drive.google.com/file/d/1Sa8fvoeZR2uz2H-pCSVwc5FAmTee34ZG/view?usp=sharing)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- LIVE DEMO -->
+
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- <a href="">Click Here</a> to see the live demo
+- <a href="https://eamador1-js-capstone.netlify.app/">Click Here</a> to see the live demo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -122,7 +121,6 @@ npm start
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -136,7 +134,6 @@ npm start
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
@@ -144,7 +141,6 @@ npm start
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -154,7 +150,6 @@ Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
@@ -162,7 +157,6 @@ If you like this project please show us support by givintg it a star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
@@ -171,7 +165,6 @@ Additionally, thanks to [TVMaze API](https://www.tvmaze.com/api) for their great
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
