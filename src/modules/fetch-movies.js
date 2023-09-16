@@ -47,21 +47,20 @@ const render = async () => {
     icons.innerHTML = `
       &nbsp; 
       <button class="comment-btn"><i class="fa-regular fa-comment"></i> Comment</button>`;
-      
 
     showDiv.appendChild(posterImg);
     showDiv.appendChild(titleContainer);
     showDiv.appendChild(icons);
     tvShowsDiv.appendChild(showDiv);
   });
- /* const reserveBtn = document.querySelectorAll('#reserve');
+  /* const reserveBtn = document.querySelectorAll('#reserve');
   reserveBtn.forEach((button) => {
     button.addEventListener('click', (e) => {
       e.preventDefault();
       const showid = button.parentElement.parentElement.getAttribute('id');
       reservpopup(showid);
     });
-  });*/
+  }); */
 };
 
 export default render;

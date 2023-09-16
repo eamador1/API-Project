@@ -11,7 +11,7 @@ await render();
 
 const heartIcons = document.querySelectorAll('.fa-heart');
 const spanItems = document.querySelectorAll('.items-count');
-//Add the number of items in the span.
+// Add the number of items in the span.
 spanItems.forEach((span) => {
   span.textContent = ` (${itemsCounter()})`;
 });
