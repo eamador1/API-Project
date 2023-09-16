@@ -3,9 +3,28 @@ import render from './modules/fetch-movies.js';
 import renderpopup from './modules/comment.js';
 import logo from './assets/favicon.png';
 import getCommentsCount from './modules/comments-counter.js';
+import { countLikes } from './modules/likes.js';
+import itemsCounter from './modules/items-counter.js';
 
 document.getElementById('logo-img').setAttribute('src', logo);
 await render();
+
+const heartIcons = document.querySelectorAll('.fa-heart');
+const spanItems = document.querySelectorAll('.items-count');
+//Add the number of items in the span.
+spanItems.forEach((span) => {
+  span.textContent = ` (${itemsCounter()})`;
+});
+
+heartIcons.forEach((icon) => icon.addEventListener('click', (event) => {
+  countLikes(event);
+  event.target.classList.add('animation-heart');
+  // Selects the span element next to the icon.
+  const span = event.target.nextElementSibling;
+  // Retrieves the number of likes and increment it by 1.
+  let count = Number(span.textContent.replace('likes', ''));
+  span.textContent = `${count += 1} likes`;
+}));
 
 // < Comment popup start
 const commentBtns = document.querySelectorAll('.comment-btn');
